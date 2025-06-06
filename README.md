@@ -1,4 +1,5 @@
 # PW-Projekt
+
 Jeśli nie ma się jescze dodanego JavaFX
 
  Konfiguracja JavaFX w IntelliJ IDEA 
@@ -14,23 +15,27 @@ Otwóryć projekt w IntelliJ IDEA.
 
 Otwóryć ustawienia modułu: File → Project Structure (Ctrl+Alt+Shift+S lub F4).
 
-Przejdź do zakładki Libraries.
+Przejść do zakładki Libraries.
 
 Kliknąć + → Java, wybierać katalog lib z rozpakowanego SDK, np. C:\javafx-sdk\lib.
 
-Zaznaczyć wszystkie pliki .jar i zatwierdź.
+Zaznaczyć wszystkie pliki .jar i zatwierdźić.
 
 Upewnić się, że biblioteka została przypisana do modułu w zakładce Modules → Dependencies.
 
 3. Skonfigurować VM options dla JavaFX
 Otwórzyć konfigurację uruchamiania: Run → Edit Configurations.
 
+Dodać Application.
+
+Dodać main jako Main Class.
+
+Wejść w Modift Options.
+
 W polu VM options dodać:
 
-swift
-Kopiuj
-Edytuj
---module-path /ścieżka/do/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml
+
+--module-path "C:\ścieżka\javafx-sdk-24.0.1\lib" --add-modules javafx.controls,javafx.fxml --enable-native-access=javafx.graphics --add-opens java.base/sun.misc=ALL-UNNAMED
 
 
 4. Zapisać konfigurację
